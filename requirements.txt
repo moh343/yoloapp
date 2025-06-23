@@ -13,5 +13,6 @@ requests>=2.23.0
 PyYAML>=5.1
 streamlit
 opencv-python
-Pillow
-cv2
+cv2s
+PIL
+numpy
