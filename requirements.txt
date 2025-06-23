@@ -12,7 +12,5 @@ numpy>=1.18.5
 requests>=2.23.0
 PyYAML>=5.1
 streamlit
-opencv-python
-cv2
 PIL
 numpy
