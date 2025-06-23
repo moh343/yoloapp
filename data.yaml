@@ -1,0 +1,12 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ["schimmel"]
+
+thowlLabel:
+  workspace: yolo_prd
+  project: yolo_prd
+  version: 1
+
