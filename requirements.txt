@@ -14,3 +14,4 @@ PyYAML>=5.1
 streamlit
 PIL
 numpy
+opencv-python
