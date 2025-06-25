@@ -11,7 +11,7 @@ import numpy as np
 
 # 🧠 Modell laden
 try:
-    model = model = YOLO("runs\detect\train\weights\best.pt")# Kleines YOLOv8-Modell (wird automatisch heruntergeladen)
+    model = model = YOLO("best.pt")# Kleines YOLOv8-Modell (wird automatisch heruntergeladen)
 except Exception as e:
     st.error(f"Fehler beim Laden des YOLO-Modells: {e}")
     st.stop()
