@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
+import os
+os.environ["ULTRALYTICS_HUB"]="0"
 from ultralytics import YOLO
 
 
