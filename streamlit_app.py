@@ -17,7 +17,7 @@ except Exception as e:
     st.stop()
 
 # UI
-st.title("🧠 YOLOv8 Objekterkennung")
+st.title("🧠 YOLOv8 Schimmelerkennung ")
 st.write("Lade ein Bild hoch, um Objekte automatisch erkennen zu lassen.")
 
 # Upload-Feld
