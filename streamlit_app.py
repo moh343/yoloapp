@@ -7,7 +7,7 @@ from ultralytics import YOLO
 
 # 🧠 Modell laden
 try:
-    model = model = YOLO(r"C:\Users\moham\Downloads\test\yolo11n.pt")# Kleines YOLOv8-Modell (wird automatisch heruntergeladen)
+    model = model = YOLO("yolo11n.pt")# Kleines YOLOv8-Modell (wird automatisch heruntergeladen)
 except Exception as e:
     st.error(f"Fehler beim Laden des YOLO-Modells: {e}")
     st.stop()
