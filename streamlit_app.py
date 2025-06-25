@@ -1,11 +1,11 @@
-import streamlit as st
-from PIL import Image
-import numpy as np
 import os
 os.environ["YOLO_VERBOSE"] = "False"
 os.environ["ULTRALYTICS_HUB"] = "0"
 os.environ["ULTRALYTICS_NO_HUB"] = "1"
 from ultralytics import YOLO
+import streamlit as st
+from PIL import Image
+import numpy as np
 
 
 
