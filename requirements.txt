@@ -13,4 +13,3 @@ requests>=2.23.0
 PyYAML>=5.1
 streamlit
 PIL
-opencv-python
