@@ -31,26 +31,27 @@ uploaded_file = st.file_uploader("📤 Bild hochladen", type=["jpg", "jpeg", "pn
 if uploaded_file is not None:
     try:
         image = Image.open(uploaded_file).convert("RGB")
-        st.image(image, caption="🖼️ Hochgeladenes Bild", use_column_width=True)
+        st.image(image, caption="📷 Hochgeladenes Bild", use_column_width=True)
 
-        # Bild in np.array umwandeln
         image_np = np.array(image)
 
-        # Inferenz mit YOLO
-        st.write("🚀 Erkenne Objekte...")
-        results = model(image_np)[0]
+        with st.spinner("YOLOv8 verarbeitet das Bild..."):
+            results = model(image_np)[0]
 
-        # Annotiertes Bild zeichnen
+        st.write(f"Gefundene Objekte: {len(results.boxes)}")
+
+        # Convert and show annotated image
         annotated = results.plot()
-        st.image(annotated, caption="📍 Erkannte Objekte", use_column_width=True)
+        annotated_image = Image.fromarray(annotated)
+        st.image(annotated_image, caption="🔍 Erkannte Objekte", use_column_width=True)
 
-        # Liste der erkannten Klassen
+        # List detected objects
         st.subheader("📋 Erkannte Objekte:")
         for box in results.boxes:
             class_id = int(box.cls[0])
             confidence = float(box.conf[0])
-            class_name = model.names[class_id]
+            class_name = model.model.names[class_id]
             st.write(f"- **{class_name}** ({confidence:.1%})")
 
     except Exception as e:
-        st.error(f"Fehler bei der Verarbeitung des Bildes: {e}")
+        st.error(f"❌ Fehler bei der Verarbeitung des Bildes: {e}")

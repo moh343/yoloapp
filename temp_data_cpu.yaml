@@ -1,0 +1,10 @@
+names:
+- schimmel
+nc: 1
+test: C:\Users\moham\Desktop\yolo_prod\test/images
+thowlLabel:
+  project: yolo_prd
+  version: 1
+  workspace: yolo_prd
+train: C:\Users\moham\Desktop\yolo_prod\train/images
+val: C:\Users\moham\Desktop\yolo_prod\valid/images
