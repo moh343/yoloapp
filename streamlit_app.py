@@ -31,7 +31,7 @@ uploaded_file = st.file_uploader("📤 Bild hochladen", type=["jpg", "jpeg", "pn
 if uploaded_file is not None:
     try:
         image = Image.open(uploaded_file).convert("RGB")
-        st.image(image, caption="📷 Hochgeladenes Bild", use_column_width=True)
+        st.image(image, caption="📷 Hochgeladenes Bild",  use_container_width=True)
 
         image_np = np.array(image)
 
@@ -43,7 +43,7 @@ if uploaded_file is not None:
         # Convert and show annotated image
         annotated = results.plot()
         annotated_image = Image.fromarray(annotated)
-        st.image(annotated_image, caption="🔍 Erkannte Objekte", use_column_width=True)
+        st.image(annotated_image, caption="🔍 Erkannte Objekte",  use_container_width=True)
 
         # List detected objects
         st.subheader("📋 Erkannte Objekte:")
